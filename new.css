@@ -1,0 +1,60 @@
+
+/* 
+Style with CSS (style.css):
+Apply styles to enhance the visual appeal of your to-do list. This includes:
+Styling the body, header, input field, and button.
+Styling the list items, including hover effects, checked states, and delete buttons. */
+
+
+
+body {
+      font-family: Arial;
+      background-color: rgb(81, 184, 102);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: yellow;
+    }
+
+    .cnt {
+      background-color: white;
+      width: 300px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px gray;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+    }
+
+    button {
+      padding: 5px 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #eee;
+      margin: 5px 0;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .deleteBtn {
+      background-color: red;
+      color: white;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+    }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> To-Do List</title>
+  <!-- Create the HTML Structure (index.html):
+Design the basic layout, including:
+
+A header (e.g., <h1> for "To-Do List").
+An input field (<input type="text">) for users to enter new tasks.
+An "Add" button (<button>) to submit new tasks.
+An unordered list (<ul>) or ordered list (<ol>) to display the tasks.
+
+
+
+Add Functionality with JavaScript (script.js):
+
+Access DOM Elements: Get references to the input field, add button, and task list using document.querySelector() or document.getElementById().
+Add Task Functionality:
+Attach an event listener to the "Add" button (or form submission) to trigger a function when clicked.
+Inside this function, get the value from the input field.
+
+Create a new list item (<li>) element dynamically.
+Add the task text to the new list item.
+Append the new list item to the task list (<ul> or <ol>).
+
+Clear the input field after adding the task.
+Mark as Complete Functionality:
+Attach event listeners to each task item (or use event delegation on the parent list).
+When a task is clicked, toggle a CSS class (e.g., "completed") to apply a strikethrough or other visual indication.
+
+Delete Task Functionality:
+Add a "Delete" button or icon to each task item.
+Attach an event listener to this button.
+When clicked, remove the corresponding task item from the DOM.
+
+Optional: Local Storage:
+Implement localStorage to persist tasks even after the browser is closed and reopened.
+Save the task list to localStorage whenever a task is added, marked as complete, or deleted.
+Load tasks from localStorage when the page loads. -->
+
+  <style>
+    
+  </style>
+   <link rel="stylesheet" href="new.css">
+</head>
+<body>
+  <h1>My To-Do List</h1>
+
+  <div class="cnt">
+    <input type="text" id="taskInput" placeholder="write Your tasks">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+  </div>
+  <img height="100" width="500" src="hnc.jpeg" alt="Description of the image">
+
+  <script>
+    let taskInput = document.getElementById("taskInput");
+    let taskList = document.getElementById("taskList");
+
+
+    function addTask() {
+      let taskText = taskInput.value;
+
+      if (taskText === "") {
+        alert("Please enter a task!");
+        return;
+      }
+
+      let li = document.createElement("li");
+      li.textContent = taskText;
+
+      // now delete
+      let delBtn = document.createElement("button");
+      delBtn.textContent = "Delete";
+      delBtn.className = "deleteBtn";
+
+    
+      delBtn.onclick = function() {
+        taskList.removeChild(li);
+      };
+
+      li.appendChild(delBtn);
+
+    
+      taskList.appendChild(li);
+
+      taskInput.value = "";
+    }
+  </script>
+</body>
+</html>
